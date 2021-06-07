@@ -1,0 +1,85 @@
+.main{
+  background-color: #faf4e8;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-card{
+  width: 382px;
+  max-width: 382px;
+  text-align: center;
+}
+
+.title{
+  color: #126656;
+  letter-spacing: 1.5px;
+}
+
+.form{
+  text-align: center;
+}
+
+ion-item{
+  --highlight-background: #126656;
+  width: 80%;
+  display: inline-block;
+  position: relative;
+
+  ion-label{
+    color: #126656 !important;
+  }
+}
+
+.error{
+  margin-left: 10%;
+  color: red;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.forgot-password{
+  display: inline-block;
+  position: relative;
+  width: 80%;
+  margin-top: 15px;
+  text-align: right;
+  a {
+    cursor: pointer;
+    color: #333;
+    text-decoration: none !important;
+  }
+}
+
+ion-button{
+  --background: #126656;
+  width: 220px;
+  margin: 16px auto;
+}
+
+.logo{
+  margin: 32px auto 0px auto;
+  bottom: 0 !important;
+  font-size: 45px;
+  font-weight: bolder;
+  color: #126656;
+  letter-spacing: 2.5px;
+}
+
+@media screen and (max-width: 599px){
+  ion-card{
+    padding: 24px;
+    width: 100%;
+  }
+  ion-item, .forgot-password{
+    width: 100%;
+  }
+  .error{
+    margin-left: 0;
+  }
+  ion-button{
+    width: 90%;
+  }
+}

@@ -1,0 +1,55 @@
+<ion-content>
+  <div class="main">
+    <ion-card>
+      <form [formGroup]="loginForm" novalidate>
+        <ion-card-header>
+          <div class="logo">
+            ////////
+          </div>
+          <ion-card-title>
+            <h1 class="title"><b>OCTASLASH</b></h1>
+          </ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <div class="form">
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input (ionBlur)="onEmailBlur()" formControlName="email" clearInput></ion-input>
+              <!-- <ion-icon style="bottom: 0px; position: absolute; right: 10px;" item-end slot="end" name="mail"></ion-icon> -->
+            </ion-item>
+            <span class="error" *ngIf="loginForm.controls.email.hasError('required') && (loginForm.controls.email.dirty || emailBlur || submitAttempt)">
+              Email is required
+            </span>
+            <span class="error" *ngIf="loginForm.controls.email.hasError('pattern') && (loginForm.controls.email.dirty || emailBlur || submitAttempt)">
+              Please enter a valid email
+            </span>
+            <span class="error" *ngIf="loginForm.controls.email.valid || (loginForm.controls.email.hasError('required') && loginForm.controls.email.hasError('pattern')) || (!loginForm.controls.email.dirty && !emailBlur && !submitAttempt)">
+              &nbsp;
+            </span>
+            <ion-item>
+              <ion-label position="floating">Password</ion-label>
+              <ion-input (ionBlur)="onPasswordBlur()" type="password" formControlName="password"></ion-input>
+              <!-- <ion-icon style="bottom: 0px; position: absolute; right: 10px;" item-end slot="end" name="{{showPassword ? 'eye' : 'eye-off'}}"(click)="showPassword=!showPassword"></ion-icon> -->
+            </ion-item>
+            <span class="error" *ngIf="!loginForm.controls.password.valid && !loginForm.controls.password.pending && (loginForm.controls.password.dirty || passwordBlur || submitAttempt)">
+              Password is required
+            </span>
+            <span class="error" *ngIf="loginForm.controls.password.valid || (!loginForm.controls.password.dirty && !passwordBlur && !submitAttempt)">
+              &nbsp;
+            </span>
+            <div class="forgot-password">
+              <a>Forgot Password?</a>
+            </div>
+          </div>
+        </ion-card-content>
+
+        <ion-card-content>
+          <div class="button">
+            <ion-button (click)="login()">Login</ion-button>
+          </div>
+        </ion-card-content>
+      </form>
+    </ion-card>
+  </div>
+</ion-content>
