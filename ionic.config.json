@@ -1,5 +1,7 @@
 {
   "name": "falcon",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

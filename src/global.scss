@@ -26,8 +26,12 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 * {
-  // font-size: 62.5%;
+  // font-size: 14px;
   font-family: 'Muli', 'Helvetica Neue', 'Arial', sans-serif;
   // line-height: 1.4 !important;
   // letter-spacing: -0.1px !important;
+}
+
+.custom-toast{
+  --max-width: 400px;
 }

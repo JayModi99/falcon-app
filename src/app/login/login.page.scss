@@ -13,7 +13,18 @@ ion-card{
   text-align: center;
 }
 
+.logo{
+  margin: 32px auto 0px auto;
+  bottom: 0 !important;
+  font-size: 50px;
+  font-weight: bolder;
+  color: #126656;
+  letter-spacing: 2.5px;
+}
+
 .title{
+  font-size: 26px !important;
+  font-weight: bold;
   color: #126656;
   letter-spacing: 1.5px;
 }
@@ -27,7 +38,6 @@ ion-item{
   width: 80%;
   display: inline-block;
   position: relative;
-
   ion-label{
     color: #126656 !important;
   }
@@ -43,10 +53,11 @@ ion-item{
 .forgot-password{
   display: inline-block;
   position: relative;
-  width: 80%;
   margin-top: 15px;
+  width: 80%;
   text-align: right;
   a {
+    // font-size: 14px !important;
     cursor: pointer;
     color: #333;
     text-decoration: none !important;
@@ -56,22 +67,23 @@ ion-item{
 ion-button{
   --background: #126656;
   width: 220px;
-  margin: 16px auto;
-}
-
-.logo{
-  margin: 32px auto 0px auto;
-  bottom: 0 !important;
-  font-size: 45px;
-  font-weight: bolder;
-  color: #126656;
-  letter-spacing: 2.5px;
+  margin: 16px auto 25px auto;
 }
 
 @media screen and (max-width: 599px){
   ion-card{
+    margin: 15px 0px;
     padding: 24px;
-    width: 100%;
+    width: 93%;
+    min-width: 270px;
+    overflow-y: auto;
+  }
+  .logo{
+    font-size: 35px !important;
+    margin: 0px auto 0px auto;
+  }
+  .title{
+    font-size: 22px !important;
   }
   ion-item, .forgot-password{
     width: 100%;
@@ -79,7 +91,14 @@ ion-button{
   .error{
     margin-left: 0;
   }
+  .forgot-password{
+    margin-top: 0px;
+    a{
+      font-size: 14px !important;
+    }
+  }
   ion-button{
     width: 90%;
+    margin: 0px auto;
   }
 }

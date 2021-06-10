@@ -1,0 +1,6 @@
+{
+	"appId": "com.octaslash.engineer",
+	"appName": "Falcon",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
