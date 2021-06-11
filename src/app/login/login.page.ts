@@ -70,18 +70,21 @@ export class LoginPage implements OnInit {
           this.loadingController.dismiss();
         }
         else{
-          Storage.set({
-            key: 'engineerId',
-            value: result[0].id,
-          });
-          Storage.set({
-            key: 'engineerName',
-            value: result[0].name,
-          });
-          Storage.set({
-            key: 'engineerEmail',
-            value: result[0].email,
-          });
+          // Storage.set({
+          //   key: 'engineerId',
+          //   value: result[0].id,
+          // });
+          // Storage.set({
+          //   key: 'engineerName',
+          //   value: result[0].name,
+          // });
+          // Storage.set({
+          //   key: 'engineerEmail',
+          //   value: result[0].email,
+          // });
+          localStorage.setItem('engineerId', result[0].id);
+          localStorage.setItem('engineerName', result[0].name);
+          localStorage.setItem('engineerEmail', result[0].email);
           this.presentToast('Login Successful!');
           this.loadingController.dismiss();
           this.emailBlur = false;
@@ -126,3 +129,6 @@ export class LoginPage implements OnInit {
   }
 
 }
+
+// android:usesCleartextTraffic="true"
+// android:windowSoftInputMode="adjustPan"

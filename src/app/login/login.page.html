@@ -18,15 +18,15 @@
               <ion-input (ionBlur)="onEmailBlur()" formControlName="email" clearInput></ion-input>
               <!-- <ion-icon style="bottom: 0px; position: absolute; right: 10px;" item-end slot="end" name="mail"></ion-icon> -->
             </ion-item>
-            <span class="error" *ngIf="loginForm.controls.email.hasError('required') && (loginForm.controls.email.dirty || emailBlur || submitAttempt)"
-             autocomplete="email" enterkeyhint="next" inputmode="email">
+            <span class="error" *ngIf="loginForm.controls.email.hasError('required') && (emailBlur || submitAttempt)"
+             autocomplete="email" enterkeyhint="next" inputmode="email" type="email">
               Email is required
             </span>
             <span class="error" *ngIf="loginForm.controls.email.hasError('pattern') && (emailBlur || submitAttempt)"
-             enterkeyhint="go">
+             enterkeyhint="done">
               Please enter a valid email
             </span>
-            <span class="error" *ngIf="loginForm.controls.email.valid || (loginForm.controls.email.hasError('required') && loginForm.controls.email.hasError('pattern')) || (!emailBlur && !submitAttempt)">
+            <span class="error" *ngIf="loginForm.controls.email.valid || (!loginForm.controls.password.dirty && !emailBlur && !submitAttempt)">
               &nbsp;
             </span>
             <ion-item>

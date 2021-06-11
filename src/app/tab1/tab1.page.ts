@@ -17,10 +17,11 @@ export class Tab1Page implements OnInit {
   }
 
   ngOnInit() {
-    Storage.get({ key: 'engineerName' })
-    .then((result: any) => {
-      this.engineerName = result.value;
-    });
+    // Storage.get({ key: 'engineerName' })
+    // .then((result: any) => {
+    //   this.engineerName = result.value;
+    // });
+    this.engineerName = localStorage.getItem('engineerName');
   }
 
   logout(){
