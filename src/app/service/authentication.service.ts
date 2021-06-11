@@ -25,12 +25,15 @@ export class AuthenticationService {
    }
 
   ifLoggedIn() {
-    Storage.get({ key: 'engineerId' })
-    .then((result: any) => {
-      if (result.value) {
-        this.authState.next(true);
-      }
-    });
+    // Storage.get({ key: 'engineerId' })
+    // .then((result: any) => {
+    //   if (result.value) {
+    //     this.authState.next(true);
+    //   }
+    // });
+    if (localStorage.getItem('engineerId')) {
+      this.authState.next(true);
+    }
   }
 
   login(data){
@@ -38,10 +41,12 @@ export class AuthenticationService {
   }
 
   logout() {
-    Storage.clear()
-    .then(() => {
-      this.authState.next(false);
-    });
+    // Storage.clear()
+    // .then(() => {
+    //   this.authState.next(false);
+    // });
+    localStorage.clear();
+    this.authState.next(false);
   }
 
   isAuthenticated() {
